@@ -15,14 +15,7 @@ app.set("view engine", "hbs");
 const layout = path.join('layout','main');
 
 app.get('/', (req, res) => {
-    const data = {
-        layout,
-        user,
-        title: 'Sign Up',
-        name: '',
-        email: '',
-        number: '',
-    };
+    
     res.render('signup');
 })
 
@@ -38,15 +31,15 @@ app.post('/signup', (req, res) => {
         res.render('signup',{...data,error});
         return;
     }
-    user.push(req.body);
-    console.log(user);
+    user.push(...req.body);
     res.redirect('/');
 })
 
 app.get('/users',(req,res)=>{
+    console.log(user);
     res.json({
         title:'User Listing',
-        user
+        data: user
     });
 });
 
