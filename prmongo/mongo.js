@@ -1,6 +1,5 @@
 import {data} from './books.js';
 import pkg from 'mongodb';
-import fs from 'fs';
 const { MongoClient } = pkg;
 
 const uri ="mongodb://localhost:27017"
