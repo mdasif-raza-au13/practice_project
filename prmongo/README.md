@@ -1,0 +1,1 @@
+# practice of mongodb data addition and routing
